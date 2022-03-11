@@ -2,13 +2,14 @@ var Bagpipe = require('bagpipe')
 var fs = require("fs");
 var request = require("request");
 
-var bou = [104.0037918, 30.59761047, 104.25441742, 30.75210571]; //下载范围
-var Minlevel = 1; //最小层级
-var Maxlevel = 10; //最大层级
+// var bou = [104.0037918, 30.59761047, 104.25441742, 30.75210571]; //下载范围
+var bou = [102.91717529, 30.05859375, 105.06225586, 31.50604248]; //下载范围
+var Minlevel = 17; //最小层级
+var Maxlevel = 17; //最大层级
 // var token = '0b79a07d2808103ab84aa56485c331a8'; //天地图key(如果失效去天地图官网申请)
 var token = '78872d82607509997e7ad7505dc714b9'; //天地图key(如果失效去天地图官网申请)
 var zpath = './tiles' // 瓦片目录
-var speed = 100; //并发数
+var speed = 1; //并发数
 var mapstyle = 'img_w'; //地图类型(img_w:影像底图 cia_w:影像标注 vec_w:街道底图 cva_w街道标注)
 
 
@@ -90,6 +91,7 @@ function createDir() {
                 }
             })
         }
+        console.log('文件夹构建成功')
         // 文件夹可能较多，等待2s开始下载
         setTimeout(() => {
             task()
@@ -105,10 +107,14 @@ var sum = 0;
 var bag = new Bagpipe(speed, {
     timeout: 1000
 })
-
+// 103605
 function task() {
     for (let z = 0; z <= all.length - 1; z++) {
         for (let x = all[z].x[0]; x <= all[z].x[1]; x++) {
+         // if(x!=103605){
+            //     continue
+            // }   
+
             for (let y = all[z].y[0]; y <= all[z].y[1]; y++) {
                 // 将下载任务推入队列
                 ++sum
@@ -157,9 +163,15 @@ function download(x, y, z) {
             console.log("request错误", err)
         }
     }).pipe(fs.createWriteStream(`${zpath}/${z}/${x}/${y}.png`).on('finish', () => {
+
+        // 判断 存在 
+
+
         console.log(`图片下载成功,第${z}层`)
         console.log(--sum)
     }).on('error', (err) => {
         console.log('发生异常:', err);
+
+        // 判断
     }));
 }
