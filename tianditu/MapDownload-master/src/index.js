@@ -1,3 +1,17 @@
+// https://api.mapbox.com/v4/mapbox.satellite/1/1/0.webp?sku=101dIqfecomh4
+// &access_token=tk.eyJ1IjoibGFpd2FueGlhbnl1IiwiZXhwIjoxNjQ3MzEzMjg1LCJpYXQiOjE2NDczMDk2ODUsInNjb3BlcyI6WyJlc3NlbnRpYWxzIiwic2NvcGVzOmxpc3QiLCJtYXA6cmVhZCIsIm1hcDp3cml0ZSIsInVzZXI6cmVhZCIsInVzZXI6d3JpdGUiLCJ1cGxvYWRzOnJlYWQiLCJ1cGxvYWRzOmxpc3QiLCJ1cGxvYWRzOndyaXRlIiwic3R5bGVzOnRpbGVzIiwic3R5bGVzOnJlYWQiLCJmb250czpsaXN0IiwiZm9udHM6cmVhZCIsImZvbnRzOndyaXRlIiwic3R5bGVzOndyaXRlIiwic3R5bGVzOmxpc3QiLCJzdHlsZXM6ZG93bmxvYWQiLCJzdHlsZXM6cHJvdGVjdCIsInRva2VuczpyZWFkIiwidG9rZW5zOndyaXRlIiwiZGF0YXNldHM6bGlzdCIsImRhdGFzZXRzOnJlYWQiLCJkYXRhc2V0czp3cml0ZSIsInRpbGVzZXRzOmxpc3QiLCJ0aWxlc2V0czpyZWFkIiwidGlsZXNldHM6d3JpdGUiLCJkb3dubG9hZHM6cmVhZCIsInZpc2lvbjpyZWFkIiwidmlzaW9uOmRvd25sb2FkIiwibmF2aWdhdGlvbjpkb3dubG9hZCIsIm9mZmxpbmU6cmVhZCIsIm9mZmxpbmU6d3JpdGUiLCJzdHlsZXM6ZHJhZnQiLCJmb250czptZXRhZGF0YSIsInNwcml0ZS1pbWFnZXM6cmVhZCIsImRhdGFzZXRzOnN0dWRpbyIsImN1c3RvbWVyczp3cml0ZSIsImNyZWRlbnRpYWxzOnJlYWQiLCJjcmVkZW50aWFsczp3cml0ZSIsImFuYWx5dGljczpyZWFkIl0sImNsaWVudCI6Im1hcGJveC5jb20iLCJsbCI6MTY0NzMwODY1MjI0NiwiaXUiOm51bGwsImVtYWlsIjoiMTA0MDQ3NzgwMEBxcS5jb20ifQ.FSufllcD9Anw0f5x2ihZeg
+// var mapbox3 = new Cesium.MapboxStyleImageryProvider({
+//     url: 'https://api.mapbox.com/styles/v1/',
+//     styleId: 'ckntom98z09ev17p8kbc3ghyc',
+//     username: 'dragon8mapbox',
+//     accessToken: '...',
+// })
+
+// const viewer = new Cesium.Viewer('container', {
+//     terrainProvider: Cesium.createWorldTerrain(),
+//     imageryProvider: mapbox3,
+// })
+
 var Bagpipe = require('bagpipe')
 var fs = require("fs");
 var request = require("request");
